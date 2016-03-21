@@ -1,0 +1,3 @@
+A simple discord bot script using meew0's awesome ruby discord bot, see https://github.com/meew0/discordrb
+Plan to add more later.
+

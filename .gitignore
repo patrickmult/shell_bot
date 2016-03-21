@@ -1,0 +1,4 @@
+# Shell's gitignore
+
+# custom
+.rbenv-vars
