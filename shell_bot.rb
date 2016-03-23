@@ -1,6 +1,7 @@
 require 'discordrb'
  
 class Shell < Discordrb::Commands::CommandBot
+  # This is doing absolutely nothing
   def initialize(email, password, prefix, attributes = {}, debug = false)
     super(email, password, prefix, attributes = {}, debug = false)
   end
@@ -41,7 +42,7 @@ module UtilityCommands
     event.user.id
   end
 
-  command :uptime do |event|
+  command :uptime do
     "I have been running for #{uptime(@start_time)}."
   end
 end
