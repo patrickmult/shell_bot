@@ -1,9 +1,21 @@
 require 'discordrb'
+require 'active_record'
+require 'pg'
+
+ActiveRecord::Base.establish_connection(
+  adapter:  'postgresql',
+  database: 'Shell_Game',
+  username: 'Shell_Postgres',
+  password: ENV["POSTGRES_PASS"],
+  host:     'localhost'
+)
+
+# Load in rb files from rby dir
+# Command/event modules
 Dir[File.dirname(__FILE__) + '/rby/*.rb'].each {|file| require file }
-# require_relative '/ruby_modules/announcer_events'
  
 class Shell < Discordrb::Commands::CommandBot
-  # This is doing absolutely nothing
+  # This is doing absolutely nothing. Can add to init now though
   def initialize(email, password, prefix, attributes = {}, debug = false)
     super(email, password, prefix, attributes = {}, debug = false)
   end
